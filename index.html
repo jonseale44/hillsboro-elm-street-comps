@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#f6f1e8" />
+  <title>Elm Street, Hillsboro — sales and listings near 100 E Elm</title>
+  <style>
+    :root {
+      --bg: #f6f1e8;
+      --ink: #1c1916;
+      --muted: #5c564d;
+      --line: #d9d0c4;
+      --paper: #fffdf8;
+      --sold: #1f5c45;
+      --list: #8a5a12;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.45;
+      font-size: 16px;
+    }
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 28px 18px 72px;
+    }
+    h1 {
+      font-size: 1.55rem;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      margin: 0 0 8px;
+      line-height: 1.2;
+    }
+    h2 {
+      font-size: 1.12rem;
+      margin: 36px 0 10px;
+      font-weight: 650;
+    }
+    p { margin: 0 0 12px; }
+    .meta { color: var(--muted); font-size: 0.92rem; margin-bottom: 22px; }
+    .kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    figure { margin: 16px 0 8px; }
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid var(--line);
+      background: var(--paper);
+    }
+    figcaption { color: var(--muted); font-size: 0.86rem; margin-top: 8px; }
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin: 18px 0 8px;
+    }
+    .stat {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 14px 14px 12px;
+    }
+    .stat b {
+      display: block;
+      font-size: 1.45rem;
+      font-weight: 650;
+      letter-spacing: -0.03em;
+    }
+    .stat span { color: var(--muted); font-size: 0.86rem; }
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin: 12px 0 8px;
+    }
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 16px;
+    }
+    .card h3 {
+      margin: 0 0 4px;
+      font-size: 1.05rem;
+    }
+    .addr { color: var(--muted); font-size: 0.9rem; margin-bottom: 10px; }
+    .pill {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 650;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .pill.sold { color: var(--sold); }
+    .pill.list { color: var(--list); }
+    dl {
+      margin: 0;
+      display: grid;
+      grid-template-columns: 42% 58%;
+      gap: 6px 10px;
+      font-size: 0.95rem;
+    }
+    dt { color: var(--muted); }
+    dd { margin: 0; font-weight: 600; }
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      margin: 8px 0 12px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      min-width: 720px;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 11px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      font-weight: 650;
+      background: #efe8dc;
+    }
+    tr:last-child td { border-bottom: 0; }
+    .num { text-align: right; white-space: nowrap; }
+    .note, .sources {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+    hr {
+      border: 0;
+      border-top: 1px solid var(--line);
+      margin: 32px 0;
+    }
+    @media (min-width: 640px) {
+      .stats { grid-template-columns: repeat(3, 1fr); }
+      .cards { grid-template-columns: 1fr 1fr; }
+      main { padding: 40px 24px 88px; }
+      h1 { font-size: 1.85rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="kicker">Downtown Hillsboro · 20 September 2026</div>
+    <h1>Elm Street sales and listings near 100 E Elm</h1>
+    <p class="meta">
+      Market snapshot for 100 E Elm Street (Frenkie’s Pasta &amp; Pizza).
+      Texas is a non-disclosure state, so closed sale prices are not public.
+      For sold properties, the figure shown is the last listed price, not a
+      confirmed close. This is not a licensed appraisal.
+    </p>
+
+    <figure>
+      <img src="images/same-block.jpg" alt="South side of East Elm: Johnson Cleaners, Wrangler’s, and Frenkie’s" />
+      <figcaption>
+        South side of East Elm, looking toward the square. Left: 114–116 E Elm
+        (Johnson Cleaners). Center: 106 E Elm (Wrangler’s). Right: 100 E Elm
+        (Frenkie’s). Google Street View, June 2025.
+      </figcaption>
+    </figure>
+
+    <div class="stats">
+      <div class="stat">
+        <b>$124 / SF</b>
+        <span>100 W Elm last list, then sold</span>
+      </div>
+      <div class="stat">
+        <b>$22 / SF</b>
+        <span>114–116 E Elm current ask</span>
+      </div>
+      <div class="stat">
+        <b>16,250 SF</b>
+        <span>100 E Elm building area (assessor)</span>
+      </div>
+    </div>
+
+    <h2>Closest style comparisons</h2>
+    <p>
+      Two nearby buildings of similar downtown brick construction: a finished
+      restaurant on the square, and a two-story mixed-use building on the same
+      block as 100 E Elm.
+    </p>
+
+    <div class="cards">
+      <article class="card">
+        <div class="pill sold">Sold</div>
+        <h3>Branded Burger</h3>
+        <div class="addr">100 W Elm Street · former Cotton Exchange Cafe</div>
+        <dl>
+          <dt>Last list</dt><dd>$475,000</dd>
+          <dt>Building area</dt><dd>3,834 SF</dd>
+          <dt>Price / SF</dt><dd>$124 list</dd>
+          <dt>Listed</dt><dd>27 January 2025</dd>
+          <dt>Closed</dt><dd>about 2 April 2025</dd>
+          <dt>Time on market</dt><dd>65 days (about 9 weeks)</dd>
+          <dt>Closed price</dt><dd>Not public</dd>
+        </dl>
+      </article>
+      <article class="card">
+        <div class="pill list">Active listing</div>
+        <h3>Johnson Cleaners &amp; CPA offices</h3>
+        <div class="addr">114 &amp; 116 E Elm Street</div>
+        <dl>
+          <dt>Asking</dt><dd>$375,000</dd>
+          <dt>Building area</dt><dd>17,000 SF</dd>
+          <dt>Price / SF</dt><dd>$22</dd>
+          <dt>Listed</dt><dd>30 April 2024</dd>
+          <dt>Status</dt><dd>Still on the market</dd>
+          <dt>Time on market</dt><dd>873 days (about 29 months)</dd>
+          <dt>Note</dt><dd>Some sites show $395,000 ($23 / SF)</dd>
+        </dl>
+      </article>
+    </div>
+
+    <figure>
+      <img src="images/branded-burger.jpg" alt="Branded Burger at 100 West Elm, southwest corner of the square" />
+      <figcaption>
+        100 W Elm, southwest corner of the square. Two-story restaurant with
+        kitchen and upstairs dining. Listed at $475,000; listing closed spring
+        2025. About one-quarter the floor area of 100 E Elm.
+      </figcaption>
+    </figure>
+
+    <h2>Other Elm Street sales and listings</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Address</th>
+            <th>Status</th>
+            <th>Time on market</th>
+            <th class="num">Price used</th>
+            <th class="num">SF</th>
+            <th class="num">$/SF</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Frenkie’s Pasta &amp; Pizza</td>
+            <td>100 E Elm</td>
+            <td>Subject</td>
+            <td>Deed 21 February 2025</td>
+            <td class="num">—</td>
+            <td class="num">16,250</td>
+            <td class="num">—</td>
+          </tr>
+          <tr>
+            <td>Branded Burger</td>
+            <td>100 W Elm</td>
+            <td>Sold</td>
+            <td>Listed 27 Jan 2025 · closed ~2 Apr 2025 · 9 weeks</td>
+            <td class="num">$475,000 list</td>
+            <td class="num">3,834</td>
+            <td class="num">$124 list</td>
+          </tr>
+          <tr>
+            <td>Johnson Cleaners / CPA</td>
+            <td>114–116 E Elm</td>
+            <td>Active</td>
+            <td>Listed 30 Apr 2024 · 29 months</td>
+            <td class="num">$375,000 ask</td>
+            <td class="num">17,000</td>
+            <td class="num">$22</td>
+          </tr>
+          <tr>
+            <td>Wrangler’s</td>
+            <td>106 E Elm</td>
+            <td>Active</td>
+            <td>Listed 5 Jun 2026 · 3½ months</td>
+            <td class="num">$275,000 ask</td>
+            <td class="num">3,744</td>
+            <td class="num">$73</td>
+          </tr>
+          <tr>
+            <td>Live-work (former Goodie Mill)</td>
+            <td>207 E Elm</td>
+            <td>Active (LoopNet)</td>
+            <td>Listed 4 Nov 2024 · 22½ months</td>
+            <td class="num">$400,000 ask</td>
+            <td class="num">15,000</td>
+            <td class="num">$27</td>
+          </tr>
+          <tr>
+            <td>Office (now Little Learners)</td>
+            <td>219 E Elm</td>
+            <td>Sold</td>
+            <td>Listed 3 Mar 2025 · closed 17 Sep 2025 · 6½ months</td>
+            <td class="num">$225,000 list</td>
+            <td class="num">2,736</td>
+            <td class="num">$82 list</td>
+          </tr>
+          <tr>
+            <td>One-story retail</td>
+            <td>231 E Elm</td>
+            <td>Sold; now for lease</td>
+            <td>Closed 27 Feb 2026</td>
+            <td class="num">$134,000 IDX / likely list</td>
+            <td class="num">1,415</td>
+            <td class="num">$95 list</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">
+      Scroll sideways on a phone to see price and $/SF. Days on market are
+      counted to 20 September 2026 for active listings, and to the close date
+      for sold listings.
+    </p>
+
+    <h2>What those rates imply for 16,250 SF</h2>
+    <p>
+      Smaller buildings usually sell for more per square foot. 100 W Elm is a
+      restaurant of 3,834 SF. 100 E Elm is 16,250 SF of restaurant, bar, and
+      apartments. Applying a restaurant rate to every foot of the larger
+      building prices apartment space as dining room.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Rate</th>
+            <th>Taken from</th>
+            <th>Applied to</th>
+            <th class="num">Implied value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>$22 / SF</td>
+            <td>114–116 E Elm current ask</td>
+            <td>All 16,250 SF</td>
+            <td class="num">$358,000</td>
+          </tr>
+          <tr>
+            <td>$124 / SF</td>
+            <td>100 W Elm last list (then sold)</td>
+            <td>Restaurant + bar only, about 6,400 SF</td>
+            <td class="num">$794,000</td>
+          </tr>
+          <tr>
+            <td>$124 / SF</td>
+            <td>100 W Elm last list (then sold)</td>
+            <td>All 16,250 SF</td>
+            <td class="num">$2,015,000</td>
+          </tr>
+          <tr>
+            <td>$142 / SF</td>
+            <td>$2,300,000 ÷ 16,250 SF</td>
+            <td>All 16,250 SF</td>
+            <td class="num">$2,300,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      100 E Elm has a working kitchen, a bar, and occupied apartments. That
+      supports a higher price per foot than a dry-cleaner and office building.
+      It does not, by itself, put restaurant pricing on every square foot of a
+      16,000 SF mixed-use building.
+    </p>
+
+    <figure>
+      <img src="images/100-e-elm.jpg" alt="100 East Elm, south wall, courthouse to the left" />
+      <figcaption>
+        100 E Elm, south wall / parking-lot side, with the courthouse to the
+        left. Google Street View, June 2025.
+      </figcaption>
+    </figure>
+
+    <hr />
+    <p class="sources">
+      Johnson Cleaners the business is at 114 E Elm. The listed real estate is
+      114 and 116 E Elm (LoopNet 31654679). 117 E Elm is a separate parcel
+      (Hill CAD 134123) and is not that listing.
+    </p>
+    <p class="sources">
+      Sources: NTREIS MLS 20825363 (100 W Elm); LoopNet 31654679 (114 E Elm);
+      public MLS/IDX pages for 106, 207, 219, and 231 E Elm; Hill CAD building
+      areas. Prepared 20 September 2026. Photographs from Google Street View
+      for identification only.
+    </p>
+  </main>
+</body>
+</html>
