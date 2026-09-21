@@ -88,11 +88,53 @@
     .card {
       background: var(--paper);
       border: 1px solid var(--line);
-      padding: 16px;
+      padding: 0;
+      overflow: hidden;
+    }
+    .card .inner { padding: 14px 16px 16px; }
+    .card-photo {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      object-position: center;
+      border: 0;
+      display: block;
     }
     .card h3 {
       margin: 0 0 4px;
       font-size: 1.05rem;
+    }
+    .photogrid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin: 12px 0 16px;
+    }
+    .prop {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+    .prop img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      object-position: center;
+      border: 0;
+    }
+    .prop .inner { padding: 12px 14px 14px; }
+    .prop h3 {
+      margin: 0 0 2px;
+      font-size: 1rem;
+    }
+    .prop .line {
+      color: var(--muted);
+      font-size: 0.86rem;
+      margin: 0;
+    }
+    .prop .price {
+      font-weight: 650;
+      margin-top: 6px;
     }
     .addr { color: var(--muted); font-size: 0.9rem; margin-bottom: 10px; }
     .pill {
@@ -155,8 +197,11 @@
     @media (min-width: 640px) {
       .stats { grid-template-columns: repeat(3, 1fr); }
       .cards { grid-template-columns: 1fr 1fr; }
+      .photogrid { grid-template-columns: 1fr 1fr; }
       main { padding: 40px 24px 88px; }
       h1 { font-size: 1.85rem; }
+      .card-photo { height: 230px; }
+      .prop img { height: 210px; }
     }
   </style>
 </head>
@@ -204,45 +249,85 @@
 
     <div class="cards">
       <article class="card">
-        <div class="pill sold">Sold</div>
-        <h3>Branded Burger</h3>
-        <div class="addr">100 W Elm Street · former Cotton Exchange Cafe</div>
-        <dl>
-          <dt>Last list</dt><dd>$475,000</dd>
-          <dt>Building area</dt><dd>3,834 SF</dd>
-          <dt>Price / SF</dt><dd>$124 list</dd>
-          <dt>Listed</dt><dd>27 January 2025</dd>
-          <dt>Closed</dt><dd>about 2 April 2025</dd>
-          <dt>Time on market</dt><dd>65 days (about 9 weeks)</dd>
-          <dt>Closed price</dt><dd>Not public</dd>
-        </dl>
+        <img class="card-photo" src="images/branded-listing.jpg" alt="Branded Burger listing photo, 100 W Elm, southwest corner of the square" />
+        <div class="inner">
+          <div class="pill sold">Sold</div>
+          <h3>Branded Burger</h3>
+          <div class="addr">100 W Elm Street · former Cotton Exchange Cafe</div>
+          <dl>
+            <dt>Last list</dt><dd>$475,000</dd>
+            <dt>Building area</dt><dd>3,834 SF</dd>
+            <dt>Price / SF</dt><dd>$124 list</dd>
+            <dt>Listed</dt><dd>27 January 2025</dd>
+            <dt>Closed</dt><dd>about 2 April 2025</dd>
+            <dt>Time on market</dt><dd>65 days (about 9 weeks)</dd>
+            <dt>Closed price</dt><dd>Not public</dd>
+          </dl>
+        </div>
       </article>
       <article class="card">
-        <div class="pill list">Active listing</div>
-        <h3>Johnson Cleaners &amp; CPA offices</h3>
-        <div class="addr">114 &amp; 116 E Elm Street</div>
-        <dl>
-          <dt>Asking</dt><dd>$375,000</dd>
-          <dt>Building area</dt><dd>17,000 SF</dd>
-          <dt>Price / SF</dt><dd>$22</dd>
-          <dt>Listed</dt><dd>30 April 2024</dd>
-          <dt>Status</dt><dd>Still on the market</dd>
-          <dt>Time on market</dt><dd>873 days (about 29 months)</dd>
-          <dt>Note</dt><dd>Some sites show $395,000 ($23 / SF)</dd>
-        </dl>
+        <img class="card-photo" src="images/cleaners-listing.jpg" alt="114 and 116 East Elm, Johnson Cleaners brick building" />
+        <div class="inner">
+          <div class="pill list">Active listing</div>
+          <h3>Johnson Cleaners &amp; CPA offices</h3>
+          <div class="addr">114 &amp; 116 E Elm Street</div>
+          <dl>
+            <dt>Asking</dt><dd>$375,000</dd>
+            <dt>Building area</dt><dd>17,000 SF</dd>
+            <dt>Price / SF</dt><dd>$22</dd>
+            <dt>Listed</dt><dd>30 April 2024</dd>
+            <dt>Status</dt><dd>Still on the market</dd>
+            <dt>Time on market</dt><dd>873 days (about 29 months)</dd>
+            <dt>Note</dt><dd>Some sites show $395,000 ($23 / SF)</dd>
+          </dl>
+        </div>
       </article>
     </div>
-
-    <figure>
-      <img src="images/branded-burger.jpg" alt="Branded Burger at 100 West Elm, southwest corner of the square" />
-      <figcaption>
-        100 W Elm, southwest corner of the square. Two-story restaurant with
-        kitchen and upstairs dining. Listed at $475,000; listing closed spring
-        2025. About one-quarter the floor area of 100 E Elm.
-      </figcaption>
-    </figure>
+    <p class="note">
+      Branded Burger photo is from the public listing. 114–116 E Elm did not
+      have a public MLS photo host; that picture is Google Street View of the
+      same facade (June 2025).
+    </p>
 
     <h2>Other Elm Street sales and listings</h2>
+    <div class="photogrid">
+      <article class="prop">
+        <img src="images/wranglers-listing.jpg" alt="Wrangler’s listing photo at 106 E Elm, with Frenkie’s to the right" />
+        <div class="inner">
+          <div class="pill list">Active · 106 E Elm</div>
+          <h3>Wrangler’s</h3>
+          <p class="line">Listing photo. Frenkie’s is the taller building on the right.</p>
+          <p class="price">$275,000 ask · 3,744 SF · $73 / SF · 3½ months</p>
+        </div>
+      </article>
+      <article class="prop">
+        <img src="images/207-listing.jpg" alt="207 E Elm listing photo, two-story brick live-work building" />
+        <div class="inner">
+          <div class="pill list">Active · 207 E Elm</div>
+          <h3>Live-work (former Goodie Mill)</h3>
+          <p class="line">Listing photo.</p>
+          <p class="price">$400,000 ask · 15,000 SF · $27 / SF · 22½ months</p>
+        </div>
+      </article>
+      <article class="prop">
+        <img src="images/219-listing.jpg" alt="219 E Elm listing photo, one-story metal office now Little Learners" />
+        <div class="inner">
+          <div class="pill sold">Sold · 219 E Elm</div>
+          <h3>Office (now Little Learners)</h3>
+          <p class="line">Listing photo. Closed 17 September 2025.</p>
+          <p class="price">$225,000 list · 2,736 SF · $82 list · 6½ months</p>
+        </div>
+      </article>
+      <article class="prop">
+        <img src="images/231-listing.jpg" alt="231 E Elm listing photo, small one-story retail building" />
+        <div class="inner">
+          <div class="pill sold">Sold · 231 E Elm</div>
+          <h3>One-story retail</h3>
+          <p class="line">Listing photo. Closed 27 February 2026; now for lease.</p>
+          <p class="price">$134,000 IDX · 1,415 SF · $95 list</p>
+        </div>
+      </article>
+    </div>
     <div class="table-wrap">
       <table>
         <thead>
@@ -337,6 +422,57 @@
       (about one to two miles). Closed prices are still not public. Highway
       national-brand boxes are included so they are not mixed with
       courthouse-square brick.
+    </p>
+    <div class="photogrid">
+      <article class="prop">
+        <img src="images/102-104-listing.jpg" alt="102 West Elm listing photo, storefront next to Branded Burger" />
+        <div class="inner">
+          <div class="pill sold">Sold · 102–104 W Elm</div>
+          <h3>Two storefronts next to Branded Burger</h3>
+          <p class="line">Listing photo. Door marked 102. Closed 23 April 2025.</p>
+          <p class="price">$235,000 list · 3,264 SF · $72 list</p>
+        </div>
+      </article>
+      <article class="prop">
+        <img src="images/110-w-elm-listing.jpg" alt="110 W Elm listing photo, This and That Thrift storefront" />
+        <div class="inner">
+          <div class="pill list">Active · 110 W Elm</div>
+          <h3>This and That Thrift</h3>
+          <p class="line">Listing photo.</p>
+          <p class="price">$188,000 ask · 2,500 SF · $75 / SF · 5½ months</p>
+        </div>
+      </article>
+      <article class="prop">
+        <img src="images/oaks-listing.jpg" alt="Hillsboro Oaks listing photo, aerial of 208 N Church apartments" />
+        <div class="inner">
+          <div class="pill list">Active · 208 N Church</div>
+          <h3>Hillsboro Oaks apartments</h3>
+          <p class="line">Listing photo. 20 units. Cut $1.6M → $1.395M.</p>
+          <p class="price">$1,395,000 ask · $91 / SF · $69,750 / unit</p>
+        </div>
+      </article>
+      <article class="prop">
+        <img src="images/craig-listing.jpg" alt="100 Craig Street listing photo, three-story brick church" />
+        <div class="inner">
+          <div class="pill list">Active · 100 Craig St</div>
+          <h3>Historic church</h3>
+          <p class="line">Listing photo. 1892 brick, historic district.</p>
+          <p class="price">$425,000 ask · 8,297 SF · $51 / SF</p>
+        </div>
+      </article>
+      <article class="prop">
+        <img src="images/dq-listing.jpg" alt="1509 Corsicana Highway Dairy Queen building" />
+        <div class="inner">
+          <div class="pill list">Active · 1509 Corsicana Hwy</div>
+          <h3>Former Dairy Queen</h3>
+          <p class="line">Broker photo of this building. Highway QSR, not square brick. Has not sold.</p>
+          <p class="price">$1,445,000 ask · 4,482 SF · $322 / SF</p>
+        </div>
+      </article>
+    </div>
+    <p class="note">
+      110 E Franklin (R&amp;R Fitness) is still in the table. Public listing
+      photos for that gym were behind a login; they are not on this page.
     </p>
     <div class="table-wrap">
       <table>
@@ -507,7 +643,13 @@
       Sources: NTREIS MLS 20825363, 20718221, 21230487, 20844132, 21368048;
       LoopNet 31654679, 30793898, 36365570; public IDX for 106, 207, 219, and
       231 E Elm; Hill CAD building areas. Prepared 20 September 2026.
-      Photographs from Google Street View for identification only.
+      Photographs: public MLS/IDX listing photos (NTREIS via League Real
+      Estate, Coldwell Banker, Texas Ally, and Century 21) for identification
+      on this snapshot. 114–116 E Elm is Google Street View (June 2025);
+      LoopNet listing photos for that building were not reachable without a
+      login. 1509 Corsicana is a Levy Retail photo of the same Dairy Queen
+      building. Street View also used for the same-block overview and the
+      south wall of 100 E Elm.
     </p>
   </main>
 </body>
